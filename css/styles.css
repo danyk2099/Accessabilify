@@ -42,7 +42,19 @@ ul {
     border: 1px solid #6780FF;
     border-radius: 12px;
     box-shadow: 2px 2px 2px #888888;
+    width: 235px;
     padding: 12px;
     position: absolute;
     z-index: 10;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.4);
+    display: none;
 }
