@@ -1,0 +1,48 @@
+#wrapper {
+    background-color: Canvas;
+    color: CanvasText;
+    display: flex;
+}
+
+#left-div {
+    background-color: #7474dc;
+    color:#FFFFFF;
+    padding: 0 20px;
+}
+
+#right-div {
+    flex: 1;
+}
+
+#top-bar {
+    display: flex;
+    gap: 10px;
+    background-color: aquamarine;
+    padding: 25px 10px;
+}
+
+#top-bar-spacer {
+    flex: 1;
+}
+
+a {
+    color: bisque;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Info Bubble */
+.info-bubble {
+    background-color: #6780FF;
+    color: #FFFFFF;
+    font-size: 14px;
+    border: 1px solid #6780FF;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px #888888;
+    padding: 12px;
+    position: absolute;
+    z-index: 10;
+}

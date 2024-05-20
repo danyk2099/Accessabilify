@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab Index Example</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="left-div" tabindex="0" class="section-container" alt="You have reached the side navigation.
+Press Enter to skip to the next section">
+        <ul>
+            <li>
+                <a href="http://www.tipalti.com" tabindex="0">Tipalti</a>
+            </li>
+            <li>
+                <a href="http://www.google.com" tabindex="0">Google</a>
+            </li>
+            <li>
+                <a href="http://www.microsoft.com" tabindex="0">Microsoft</a>
+            </li>
+            <li>
+                <a href="http://www.apple.com" tabindex="0">Apple</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="right-div">
+        <div id="top-bar" tabindex="0" class="section-container" alt="Top Bar">
+            <div id="top-bar-spacer"></div>
+            <a href="http://www.tipalti.com/support">Support</a>
+            <span>
+                Search: <input type="text" placeholder="Search" />
+            </span>
+        </div>
+        <div id="main-body" tabindex="0" class="section-container" alt="You have reached the form content.
+Press Enter to skip to the next section">
+            Enter Details:
+
+            <section title="details">
+                <div>First Name: <input type="text" placeholder="First Name" /></div>
+                <div>Last Name: <input type="text" placeholder="Last Name" /></div>
+                <div>Email: <input type="text" placeholder="Email" /></div>
+                <div>Phone Number: <input type="text" placeholder="Phone Number" /></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
