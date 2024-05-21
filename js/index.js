@@ -133,29 +133,29 @@ class AccessibilityEnabler {
         Object.keys(containers).forEach( (key) => {
             const container = containers[key];
 
-            switch(key) {
-                case 'sideBar':
-                    break;
-                // case 'topBar':
-                //     container.classList.add('section-container');
-                //     break;
-                case 'topBarUserControls':
-                    container.setAttribute('alt', 'You have reached the upper navigation.\n' +
-                        'Press Enter to skip to the next section');
-                    break;
-                // case 'sideBarHamburgerMenu':
-                //     break;
-                case 'steps':
-                    container.setAttribute('alt', 'You have reached the steps navigation.\n' +
-                        'Press Enter to skip to the next section');
-                    break;
-                case 'purchaseDetails':
-                    container.setAttribute('alt', 'You have reached the form content.\n' +
-                        'Press Enter to skip to the next section');
-                    break;
-            }
-
             if (container) {
+                switch(key) {
+                    case 'sideBar':
+                        break;
+                    // case 'topBar':
+                    //     container.classList.add('section-container');
+                    //     break;
+                    case 'topBarUserControls':
+                        container.setAttribute('alt', 'You have reached the upper navigation.\n' +
+                            'Press Enter to skip to the next section');
+                        break;
+                    // case 'sideBarHamburgerMenu':
+                    //     break;
+                    case 'steps':
+                        container.setAttribute('alt', 'You have reached the steps navigation.\n' +
+                            'Press Enter to skip to the next section');
+                        break;
+                    case 'purchaseDetails':
+                        container.setAttribute('alt', 'You have reached the form content.\n' +
+                            'Press Enter to skip to the next section');
+                        break;
+                }
+
                 container.classList.add('section-container');
                 container.setAttribute('tabindex', '0');
             }
