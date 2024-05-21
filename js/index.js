@@ -199,4 +199,3 @@ class AccessibilityEnabler {
 const accessibilityEnabler = new AccessibilityEnabler();
 
 accessibilityEnabler.init();
-
