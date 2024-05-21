@@ -123,8 +123,6 @@ class AccessibilityEnabler {
     setSectionContainers() {
         const containers = {
             sideBar: this.getElementByXpath('/html/body/div[2]/div[2]'),
-            // sideBarHamburgerMenu: this.getElementByXpath('/html/body/div[2]/div[2]/div/div/section/aside/div/div/div'),
-            // topBar: this.getElementByXpath('/html/body/div[2]/div[3]/div[1]/div'),
             topBarUserControls: this.getElementByXpath('/html/body/div[2]/div[3]/div[1]/div/div[2]'),
             steps: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[1]'),
             purchaseDetails: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[2]')
@@ -137,15 +135,10 @@ class AccessibilityEnabler {
                 switch(key) {
                     case 'sideBar':
                         break;
-                    // case 'topBar':
-                    //     container.classList.add('section-container');
-                    //     break;
                     case 'topBarUserControls':
                         container.setAttribute('alt', 'You have reached the upper navigation.\n' +
                             'Press Enter to skip to the next section');
                         break;
-                    // case 'sideBarHamburgerMenu':
-                    //     break;
                     case 'steps':
                         container.setAttribute('alt', 'You have reached the steps navigation.\n' +
                             'Press Enter to skip to the next section');
@@ -164,9 +157,6 @@ class AccessibilityEnabler {
 
     setFields() {
         const fields = {
-            // requestedFor: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[2]/div/div/div/div[2]/div[4]/tip-dropdown/div/tip-input/div/tip-formrow/div[1]/div/input'),
-            // description: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[2]/div/div/div/div[2]/div[5]/tip-textarea/tip-formrow/div[1]/textarea'),
-            // suppliers: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[2]/div/div/div/div[2]/div[3]/tip-dropdown/div/tip-input/div/tip-formrow/div[1]/div/input'),
             plusSign: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[2]/div/div/div/div[2]/div[6]/div/div[1]/div/div[1]/div/div/tip-tooltip/div/tip-button/button'),
             howMuch: this.getElementByXpath('/html/body/div[2]/div[3]/div[2]/div[19]/div[2]/div/div/div[1]/div[2]/div/div/div/div[2]/div[6]/div/div[1]/div/div[2]/div/tip-input-currency/tip-formrow/div[1]/div/tip-input-currency-field/input'),
         };
