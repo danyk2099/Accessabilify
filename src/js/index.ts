@@ -1,5 +1,5 @@
 class AccessibilityEnabler {
-    activeInfoBubble;
+    activeInfoBubble: HTMLElement;
     voices;
     speechMessage;
 
@@ -17,24 +17,23 @@ class AccessibilityEnabler {
 
     attachEvents()  {
         document.addEventListener('keyup', (event) => {
-            const focusElement = document.activeElement;
+            const focusElement: any = document.activeElement;
 
             if (event.key === 'Enter') {
                 if (document.body.classList.contains('active-tabulation')) {
                     event.preventDefault();
                     event.stopImmediatePropagation();
 
-                    console.log(focusElement.dataset['section'] );
+                    // console.log(focusElement.dataset['section'] );
 
-                    const currentSectionNumber = parseInt(focusElement.dataset['section']
-                        .split('-')[1], 10);
+                    const currentSectionNumber = parseInt(focusElement.dataset['section'].split('-')[1], 10);
 
-                    const nextSection = document.querySelector(`[data-section="section-${currentSectionNumber + 1}"]`);
+                    const nextSection: HTMLElement = document.querySelector(`[data-section="section-${currentSectionNumber + 1}"]`);
 
                     if (nextSection) {
                         nextSection.focus();
                     } else {
-                        document.querySelector('[data-section="section-1"]').focus();
+                        (document.querySelector('[data-section="section-1"]') as HTMLInputElement).focus();
                     }
                 }
 
@@ -63,7 +62,7 @@ class AccessibilityEnabler {
         });
     };
 
-    textToSpeech(msg) {
+    textToSpeech(msg: string) {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
 
@@ -77,7 +76,7 @@ class AccessibilityEnabler {
         }
     };
 
-    setInfoBubbleStyles(infoBubbleElem, boundingRect) {
+    setInfoBubbleStyles(infoBubbleElem: HTMLElement, boundingRect: DOMRect) {
         infoBubbleElem.style.backgroundColor = '#6780FF';
         infoBubbleElem.style.color = '#FFFFFF';
         infoBubbleElem.style.fontSize = '14px';
@@ -98,7 +97,7 @@ class AccessibilityEnabler {
         }
     }
 
-    showInfoBubble(bubbleText, element) {
+    showInfoBubble(bubbleText: string, element: HTMLElement) {
         const boundingRect = element.getBoundingClientRect();
 
         this.activeInfoBubble = this.activeInfoBubble || document.createElement('div');
@@ -116,7 +115,7 @@ class AccessibilityEnabler {
 
     /* Temporary */
 
-    getElementByXpath(xPath) {
+    getElementByXpath(xPath: string) {
         return document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     }
 
@@ -129,7 +128,8 @@ class AccessibilityEnabler {
         };
 
         Object.keys(containers).forEach( (key) => {
-            const container = containers[key];
+            // @ts-ignore
+            const container: HTMLElement = containers[key];
 
             if (container) {
                 switch(key) {
@@ -162,7 +162,8 @@ class AccessibilityEnabler {
         };
 
         Object.keys(fields).forEach( (key) => {
-            const field = fields[key];
+            // @ts-ignore
+            const field: HTMLElement = fields[key];
 
             switch(key) {
                 case 'howMuch':
