@@ -1,11 +1,14 @@
 class AccessibilityEnabler {
-    activeInfoBubble: HTMLElement;
-    voices;
-    speechMessage;
+    private activeInfoBubble: HTMLElement;
+    readonly speechUtterance: SpeechSynthesisUtterance;
+    readonly voices: SpeechSynthesisVoice[];
 
     constructor() {
+        this.speechUtterance = new SpeechSynthesisUtterance();
+
         this.voices = window.speechSynthesis.getVoices();
-        this.speechMessage = new SpeechSynthesisUtterance();
+
+        console.log('DK this.voices: ', this.voices);
     }
 
     buildSection()  {
@@ -66,13 +69,13 @@ class AccessibilityEnabler {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
 
-            this.speechMessage.voice = this.voices[0];
-            this.speechMessage.volume = 1; // From 0 to 1
-            this.speechMessage.rate = 0.85; // From 0.1 to 10
-            this.speechMessage.pitch = 0.6; // From 0 to 2
-            this.speechMessage.lang = 'en-US';
-            this.speechMessage.text = msg;
-            window.speechSynthesis.speak(this.speechMessage);
+            this.speechUtterance.voice = this.voices[0];
+            this.speechUtterance.volume = 1; // From 0 to 1
+            this.speechUtterance.rate = 0.85; // From 0.1 to 10
+            this.speechUtterance.pitch = 0.6; // From 0 to 2
+            this.speechUtterance.lang = 'en-US';
+            this.speechUtterance.text = msg;
+            window.speechSynthesis.speak(this.speechUtterance);
         }
     };
 
